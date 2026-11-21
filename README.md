@@ -1,27 +1,39 @@
-# MapFrontend
+# Map frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+An Angular 13 and Leaflet prototype for selecting a point on a map, drawing obstacles and displaying calculation results. It pairs with the Spring Boot service in [`arpesterev/azs_backend`](https://github.com/arpesterev/azs_backend).
 
-## Development server
+## Features visible in the source
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- OpenStreetMap tiles displayed through Leaflet.
+- Point selection on the map.
+- Circle, rectangle and polygon drawing via `leaflet-draw`.
+- Coordinates, drawing data and overlays shared between page components.
+- A separate backend for radius calculations.
 
-## Code scaffolding
+The main screens are `HomeComponent` and `LeafletMapComponent`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Run locally
 
-## Build
+With Node.js and npm installed:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+npm ci
+npm start
+```
 
-## Running unit tests
+The Angular development server is configured to run at http://localhost:4200. The corresponding backend code allows requests from that origin.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To produce a frontend build:
 
-## Running end-to-end tests
+```sh
+npm run build
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Source map
 
-## Further help
+- [`src/app/home/`](src/app/home/): control panel and calculation workflow.
+- [`src/app/leaflet-map/`](src/app/leaflet-map/): interactive map.
+- [`src/models/`](src/models/): map and request models.
+- [`src/app/app-routing.module.ts`](src/app/app-routing.module.ts): routes.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This is a research/demo prototype, not an independently validated safety or engineering application. Neither frontend nor backend commands were run during this documentation-only change.
